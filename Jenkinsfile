@@ -7,21 +7,24 @@ pipeline {
 
   }
   stages {
-    stage('Install') {
-      steps {
-        sh '''pip install mkdocs-material
-'''
-      }
-    }
     stage('Build') {
       steps {
-        sh '''cd /docs/mkdocs-test
-mkdocs build'''
+        sh 'mkdocs build'
       }
     }
     stage('Test') {
       steps {
-        sh 'ls -l _site/'
+        sh 'ls -l site/'
+      }
+    }
+    stage('Package') {
+      steps {
+        sh 'zip -r site.zip site/*'
+      }
+    }
+    stage('Deliver') {
+      steps {
+        sh 'echo "Working on Delivry"'
       }
     }
   }
