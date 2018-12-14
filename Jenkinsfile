@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'python:2.7'
-      args '-v $WORKSPACE:/docs'
+      args '-v ${PWD}:/docs'
     }
 
   }
