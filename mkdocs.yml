@@ -1,0 +1,13 @@
+site_name: Documentation Pascal
+theme: 
+  name: 'material'
+  palette:
+    primary: 'purple'
+    accent: 'pink'
+  logo:
+    icon: 'thumb_up'
+  language: 'fr'
+nav:
+  - Home: index.md
+  - Installation: installation.md
+
